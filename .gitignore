@@ -1,0 +1,6 @@
+# Local development artifacts
+.DS_Store
+__pycache__/
+.pytest_cache/
+node_modules/
+*.log
