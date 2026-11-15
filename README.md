@@ -126,7 +126,7 @@ FreeWatermark/
 
 ## 关于作者
 
-**AI 酋长 Andy** · 星觉科技 · 北京。流量 AI 联合创始人、星觉 AI 创始人，专注 AI 产品化与业务增长。
+**AI酋长Andy** · 星觉科技 · 北京。流量 AI 联合创始人、星觉 AI 创始人，专注 AI 产品化与业务增长。
 
 - 官网：[metaver.vip](https://metaver.vip/)
 - GitHub：[AIPMAndy](https://github.com/AIPMAndy)
