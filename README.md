@@ -14,6 +14,8 @@
 
 > **独立开源仓库：** 本项目已从 FreeRedact 的临时目录迁出，网站由独立仓库 `AIPMAndy/FreeWatermark` 的 GitHub Pages 自动部署。
 
+![FreeWatermark 社交预览](assets/social-preview.png)
+
 ![FreeWatermark 项目封面](og-cover.svg)
 
 ## 为什么做它
@@ -46,6 +48,23 @@
 **电脑**：支持选择文件、拖入图片、粘贴剪贴板中的图片；自由拖动模式可用鼠标定位。
 
 **批量**：一次选择 2–12 张图片，调整水印后点击「批量打包 ZIP」。iPhone 上可以在「文件」App 中解压。
+
+## 常见问题
+
+**图片会上传吗？**  
+不会。水印在浏览器本地 Canvas 上绘制，没有文件上传接口。
+
+**这是去水印工具吗？**  
+不是。本项目不是去水印工具；请对你拥有授权的内容添加水印。
+
+**HEIC 打不开怎么办？**  
+浏览器无法解码的 HEIC/AVIF，请先转为 PNG 或 JPG。
+
+**一次最多几张？**  
+最多 12 张，共用一套水印设置，可以批量输出 ZIP。
+
+**手机上为什么保存方式不一样？**  
+系统分享只在浏览器支持时可用。如果 iOS 没有直接存入相册，请从系统分享菜单保存到照片或文件；不同 Safari 版本、设备权限和浏览器的表现可能不同。
 
 ## 本地运行
 
@@ -93,6 +112,8 @@ python3 tests/browser_smoke.py
 ```text
 FreeWatermark/
 ├─ index.html                 # 中文响应式工具页
+├─ assets/social-preview.png  # 社交预览图
+├─ og-cover.svg               # 矢量封面，文件保留
 ├─ styles.css                 # 移动优先 UI
 ├─ src/engine.js              # 纯 Canvas 水印引擎
 ├─ src/app.js                 # 上传、状态、预览、保存
@@ -105,7 +126,7 @@ FreeWatermark/
 
 ## 关于作者
 
-**AI 酋长 Andy** · 星觉科技。前腾讯、百度 AI 产品专家，前大模型公司 VP，专注 AI 产品化与业务增长。
+**AI酋长Andy** · 星觉科技 · 北京。流量 AI 联合创始人、星觉 AI 创始人，专注 AI 产品化与业务增长。
 
 - 官网：[metaver.vip](https://metaver.vip/)
 - GitHub：[AIPMAndy](https://github.com/AIPMAndy)
