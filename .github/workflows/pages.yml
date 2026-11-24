@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+  actions: read
   pages: write
   id-token: write
 concurrency:
@@ -43,9 +44,27 @@ jobs:
           cp assets/social-preview.png dist/assets/
           cp src/*.js dist/src/
           touch dist/.nojekyll
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: dist
+      - name: Wait until uploaded Pages artifact is discoverable by GitHub Actions API
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          artifact_count=0
+          for attempt in $(seq 1 18); do
+            artifact_count="$(gh api "repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts" --jq '[.artifacts[] | select(.name == "github-pages" and .expired == false)] | length' || echo 0)"
+            echo "Pages artifact visibility check $attempt: $artifact_count"
+            if [ "$artifact_count" -ge 1 ]; then break; fi
+            sleep 5
+          done
+          if [ "$artifact_count" -lt 1 ]; then
+            echo "::error::github-pages upload is not yet discoverable; do not claim a deployed site"
+            exit 1
+          fi
+          sleep 5
       - id: deploy
         uses: actions/deploy-pages@v4
 
