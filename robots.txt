@@ -1,0 +1,5 @@
+# Path-scoped robots file; root host robots.txt is maintained in AIPMAndy.github.io
+User-agent: *
+Allow: /
+
+Sitemap: https://aipmandy.github.io/FreeWatermark/sitemap.xml

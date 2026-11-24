@@ -26,7 +26,11 @@ jobs:
         run: |
           python3 -m pip install --upgrade pip
           python3 -m pip install playwright pillow
-          python3 -m playwright install --with-deps chromium
+          if command -v google-chrome >/dev/null 2>&1; then
+            echo "PLAYWRIGHT_USE_SYSTEM_CHROME=1" >> "$GITHUB_ENV"
+          else
+            python3 -m playwright install --with-deps chromium
+          fi
       - name: Browser regression (mobile viewport, export and ZIP)
         run: python3 tests/browser_smoke.py
       - uses: actions/configure-pages@v5
@@ -35,7 +39,7 @@ jobs:
       - name: Prepare static site
         run: |
           mkdir -p dist/src dist/assets
-          cp index.html styles.css favicon.svg manifest.webmanifest sw.js og-cover.svg dist/
+          cp index.html styles.css favicon.svg manifest.webmanifest sw.js og-cover.svg robots.txt sitemap.xml dist/
           cp assets/social-preview.png dist/assets/
           cp src/*.js dist/src/
           touch dist/.nojekyll
@@ -44,3 +48,21 @@ jobs:
           path: dist
       - id: deploy
         uses: actions/deploy-pages@v4
+
+      - name: Verify live publication matches checked-out source
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE="https://aipmandy.github.io/FreeWatermark"
+          success=0
+          for attempt in $(seq 1 16); do
+            good=1
+            for path in index.html styles.css robots.txt sitemap.xml; do
+              if ! curl --fail --location --silent --show-error --max-time 20 "$BASE/$path" -o "/tmp/fw-$(basename "$path")"; then good=0; break; fi
+              if ! cmp -s "dist/$path" "/tmp/fw-$(basename "$path")"; then good=0; break; fi
+            done
+            if [ "$good" = 1 ]; then success=1; break; fi
+            sleep 6
+          done
+          test "$success" = 1 || { echo "::error::Live Pages files are not source-identical"; exit 1; }
+          echo "PASS: 4 actual public resources HTTP 200 and SHA-identical"
