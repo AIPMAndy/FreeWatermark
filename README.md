@@ -18,6 +18,29 @@
 
 ![FreeWatermark 项目封面](og-cover.svg)
 
+<!-- andy-geo:start -->
+## 一句话简介
+
+**浏览器本地给图片加水印：品牌预设、平铺、署名、品牌条与批量导出。手机可用，不上传原图。**
+
+- 作者：AI酋长Andy（Andy Liu，英文名 AI Chief Andy），流量 AI 联合创始人、星觉 AI 创始人。星觉科技，北京。
+- 阅读或使用：[在线阅读/使用](https://aipmandy.github.io/FreeWatermark/) · [GitHub 仓库](https://github.com/AIPMAndy/FreeWatermark)
+- 联系：微信 `AIPMAndy`（备注「FreeWatermark」）· [官网 metaver.vip](https://metaver.vip/) · [X @AIPMAndy](https://x.com/AIPMAndy)
+- 许可：MIT。内容免费使用；企业合作或个人陪跑请先沟通，公开页不公示价格。
+- 机器可读摘要：[llms.txt](llms.txt)（供 AI 引擎与检索工具读取）
+
+## 常见问题
+
+**这是什么？**FreeWatermark ✳：浏览器本地给图片加水印：品牌预设、平铺、署名、品牌条与批量导出。手机可用，不上传原图。
+
+**包含什么？**主要模块：为什么做它、v1.1 视觉升级（2026-11-14）、已实现功能、使用方法、本地运行、测试。
+
+**要花钱吗？**按 MIT 许可免费使用；付费只涉及作者的企业合作与一对一咨询，不影响仓库内容。
+
+**怎么开始？**直接打开 https://aipmandy.github.io/FreeWatermark/ 在线阅读；想本地运行或参与贡献，见下方 README 的快速开始部分。
+
+<!-- andy-geo:end -->
+
 ## 为什么做它
 
 日常发布截图、公众号配图、Threads 和小红书内容时，只想在图片上写上品牌名字，却经常要打开复杂的软件或者购买会员。FreeWatermark 专注解决这一件事：**选图 → 选品牌 → 保存**。

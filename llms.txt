@@ -1,0 +1,49 @@
+# FreeWatermark ✳
+
+> 浏览器本地给图片加水印：品牌预设、平铺、署名、品牌条与批量导出。手机可用，不上传原图。
+
+- 作者：AI酋长Andy（AIPMAndy），官网 https://metaver.vip/
+- 开源仓库：https://github.com/AIPMAndy/FreeWatermark
+- 在线地址：https://aipmandy.github.io/FreeWatermark/
+- 许可：MIT
+- 语言：中文（zh-CN）
+- 最近更新：2026-11-24
+
+## 这是什么
+
+免费开源的图片加水印工具 · 手机直接用 · 浏览器本地处理 · 无需注册
+!Licensehttps://img.shields.io/badge/License-MIT-16191F?style=flat-square !No dependencieshttps://img.shields.io/badge/dependencies-0-6666D9?style=flat-square !Mobilehttps://img.shields.io/badge/mobile-friendly-24A375?style=flat-square
+
+## 主要页面
+
+- [FreeWatermark｜免费在线图片加水印 · 手机可用 · 本地处理](https://aipmandy.github.io/FreeWatermark/)
+
+## 内容目录
+
+- 为什么做它
+- v1.1 视觉升级（2026-11-14）
+- 已实现功能
+- 使用方法
+- 本地运行
+- 测试
+- 新建独立 GitHub 仓库
+- GitHub Pages 部署
+- 安全、隐私与限制
+- 技术结构
+- 关于作者
+
+## 关键事实
+
+- 名称：FreeWatermark ✳
+- 类型：中文开源项目
+- 许可：MIT
+- 语言：中文
+- 最近更新：2026-11-24
+- 仓库：https://github.com/AIPMAndy/FreeWatermark
+
+## 相关链接
+
+- [作者官网](https://metaver.vip/)
+- [GitHub 主页](https://github.com/AIPMAndy/AIPMAndy)
+- [开源总目录](https://aipmandy.github.io/)
+- [机器可读摘要](https://aipmandy.github.io/FreeWatermark/llms.txt)
