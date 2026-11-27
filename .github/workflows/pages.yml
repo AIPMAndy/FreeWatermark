@@ -44,6 +44,8 @@ jobs:
           cp assets/social-preview.png dist/assets/
           cp src/*.js dist/src/
           touch dist/.nojekyll
+      - name: Ensure llms.txt in Pages artifact
+        run: mkdir -p dist && cp llms.txt dist/llms.txt
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist
